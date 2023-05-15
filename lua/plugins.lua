@@ -15,6 +15,8 @@ return {
     { "hrsh7th/cmp-nvim-lua" },
     { 'rose-pine/neovim',                 name = 'rose-pine' },
     { "mbbill/undotree" },
+    { "nvim-lualine/lualine.nvim" },
+    { "nvim-tree/nvim-web-devicons" },
     { "tpope/vim-fugitive" },
     { "L3MON4D3/LuaSnip",                 version = "1.*",       build = "make install_jsregexp" },
     {
