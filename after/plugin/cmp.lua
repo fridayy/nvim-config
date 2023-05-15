@@ -19,7 +19,7 @@ cmp.setup({
         ['<C-Space>'] = cmp.mapping.complete(),
         --['<TAB>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
-        --['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         ["<Tab>"] = cmp.mapping(function(fallback)
             -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
             if cmp.visible() then
@@ -76,5 +76,9 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require('lspconfig')['erlangls'].setup {
+    capabilities = capabilities
+}
+
+require('lspconfig')['kotlin_language_server'].setup {
     capabilities = capabilities
 }
