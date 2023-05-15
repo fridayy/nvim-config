@@ -13,20 +13,10 @@ return {
     { "saadparwaiz1/cmp_luasnip" },
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-nvim-lua" },
-    {
-        "neanias/everforest-nvim",
-        version = false,
-        lazy = false,
-        priority = 1000, -- make sure to load this before all the other start plugins
-        -- Optional; default configuration will be used if setup isn't called.
-        config = function()
-            require("everforest").setup({
-                -- Your config here
-            })
-        end
-    },
+    { 'rose-pine/neovim',                 name = 'rose-pine' },
     { "mbbill/undotree" },
-    { "L3MON4D3/LuaSnip", version = "1.*", build = "make install_jsregexp" },
+    { "tpope/vim-fugitive" },
+    { "L3MON4D3/LuaSnip",                 version = "1.*",       build = "make install_jsregexp" },
     {
         "folke/which-key.nvim",
         config = function()
