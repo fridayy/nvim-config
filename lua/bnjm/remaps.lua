@@ -12,8 +12,8 @@ vim.keymap.set("n", "<C-b>", "<C-b>zz")
 
 
 -- file explorer
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "Ex File Explorer"})
 
 -- write
-vim.keymap.set("n", "<leader>w", vim.cmd.w)
+vim.keymap.set("n", "<leader>w", vim.cmd.w, { desc = "Save"})
 
