@@ -18,6 +18,9 @@ return {
     { "nvim-lualine/lualine.nvim" },
     { "nvim-tree/nvim-web-devicons" },
     { "tpope/vim-fugitive" },
+    { "numToStr/Comment.nvim" },
+    { "mfussenegger/nvim-dap" },
+    { "mfussenegger/nvim-dap-python" },
     { "L3MON4D3/LuaSnip",                 version = "1.*",       build = "make install_jsregexp" },
     {
         "folke/which-key.nvim",
