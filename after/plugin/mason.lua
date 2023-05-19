@@ -26,6 +26,7 @@ require('mason-lspconfig').setup_handlers({
         lspconfig[server_name].setup({
             on_attach = lsp_attach,
             capabilities = lsp_capabilities,
+            root_dir = function() return vim.fn.getcwd() end
         })
     end,
 })
