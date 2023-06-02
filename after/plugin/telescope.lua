@@ -7,6 +7,9 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files, {desc = "Find files"})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find grep"})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers"})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find helptags"})
+vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, {desc = "lsp buffer symbols"})
+vim.keymap.set("n", "<leader>fS", builtin.lsp_workspace_symbols, {desc = "lsp workspace symbols"})
+
 -- lsp stuff
 vim.keymap.set("n", "<leader>ldd", builtin.lsp_definitions, { desc = "Find definitions"})
 vim.keymap.set("n", "<leader>ldD", builtin.diagnostics, { desc = "Diagnostics"})

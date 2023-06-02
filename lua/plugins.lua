@@ -21,7 +21,9 @@ return {
     { "numToStr/Comment.nvim" },
     { "mfussenegger/nvim-dap" },
     { "mfussenegger/nvim-dap-python" },
+    { "rcarriga/nvim-dap-ui" },
     { "lewis6991/gitsigns.nvim" },
+    { "catppuccin/nvim", name = "catppuccin" },
     { "L3MON4D3/LuaSnip",                 version = "1.*",       build = "make install_jsregexp" },
     {
         "folke/which-key.nvim",
