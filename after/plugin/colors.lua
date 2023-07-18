@@ -49,5 +49,4 @@ require('rose-pine').setup({
 })
 
 -- Set colorscheme after options
--- colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
-vim.cmd.colorscheme "catppuccin-frappe"
+vim.cmd.colorscheme "rose-pine-dawn"

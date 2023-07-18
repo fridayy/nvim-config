@@ -15,7 +15,6 @@ local lsp_attach = function(client, bufnr)
     -- idea like signature help
     vim.keymap.set("i", "<C-p>", function () vim.lsp.buf.signature_help() end, keymap_opts(bufnr, "Signature help"))
     vim.keymap.set("n", "<C-p>", function () vim.lsp.buf.signature_help() end, keymap_opts(bufnr, "Signature help"))
-
 end
 
 local lspconfig = require('lspconfig')
@@ -32,3 +31,4 @@ require('mason-lspconfig').setup_handlers({
 function keymap_opts(bufnr, desc)
     return { buffer = bufnr, desc = desc }
 end
+

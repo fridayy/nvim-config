@@ -9,6 +9,8 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-f>", "<C-f>zz")
 vim.keymap.set("n", "<C-b>", "<C-b>zz")
+vim.keymap.set("n", "<s-j>", "")
+vim.keymap.set("n", "<s-h>", "")
 
 
 -- file explorer
@@ -27,4 +29,4 @@ vim.keymap.set("i", "<C-j>", "<Down>")
 vim.keymap.set("i", "<C-k>", "<Up>")
 vim.keymap.set("i", "<C-l>", "<Right>")
 
-vim.keymap.set("i", "<C-p>", function() print("hello") end, {noremap = true})
+vim.keymap.set("i", "<C-p>", function() print("hello") end)

@@ -10,6 +10,7 @@ return {
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
     { "hrsh7th/cmp-cmdline" },
+    { "hrsh7th/cmp-nvim-lsp-signature-help" },
     { "saadparwaiz1/cmp_luasnip" },
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-nvim-lua" },
@@ -24,6 +25,8 @@ return {
     { "rcarriga/nvim-dap-ui" },
     { "lewis6991/gitsigns.nvim" },
     { "catppuccin/nvim", name = "catppuccin" },
+    { "phaazon/hop.nvim" },
+    { "ggandor/leap.nvim" },
     { "L3MON4D3/LuaSnip",                 version = "1.*",       build = "make install_jsregexp" },
     {
         "folke/which-key.nvim",

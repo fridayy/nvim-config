@@ -19,7 +19,6 @@ cmp.setup({
         ['<C-Space>'] = cmp.mapping.complete(),
         --['<TAB>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         ["<Tab>"] = cmp.mapping(function(fallback)
             -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
             if cmp.visible() then
@@ -36,7 +35,8 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = 'buffer' },
-        { name = "nvim_lsp", priority = 1000 },
+        { name = "nvim_lsp_signature_help", priority = 1000 },
+        { name = "nvim_lsp", priority = 9999 },
         { name = "luasnip", priority = 750 },
         { name = "buffer", priority = 500 },
         { name = "path", priority = 250 },

@@ -1,14 +1,3 @@
-# module and export all
-snippet mod
-	-module(${1:`Filename('', 'my')`}).
-
-	-compile([export_all]).
-
-	start() ->
-	    ${2}
-
-	stop() ->
-	    ok.
 # define directive
 snippet def
 	-define(${1:macro}, ${2:body}).${3}
@@ -64,10 +53,15 @@ snippet %s
 # private function marker
 snippet %p
 	%% @private
-# OTP application
-snippet application
-	-module(${1:`Filename('', 'my')`}).
 
+
+snippet doc
+	%% -----------------------------------------------------------------------------
+	%% @doc
+	%% @end
+	%% -----------------------------------------------------------------------------
+# OTP application
+snippet module_application
 	-behaviour(application).
 
 	-export([start/2, stop/1]).
@@ -82,33 +76,8 @@ snippet application
 
 	stop(_State) ->
 	    ok.
-# OTP supervisor
-snippet supervisor
-	-module(${1:`Filename('', 'my')`}).
-
-	-behaviour(supervisor).
-
-	%% API
-	-export([start_link/0]).
-
-	%% Supervisor callbacks
-	-export([init/1]).
-
-	-define(SERVER, ?MODULE).
-
-	start_link() ->
-	    supervisor:start_link({local, ?SERVER}, ?MODULE, []).
-
-	init([]) ->
-	    Server = {${2:my_server}, {$2, start_link, []},
-	      permanent, 2000, worker, [$2]},
-	    Children = [Server],
-	    RestartStrategy = {one_for_one, 0, 1},
-	    {ok, {RestartStrategy, Children}}.
 # OTP gen_server
-snippet gen_server
-	-module(${1:`Filename('', 'my')`}).
-
+snippet module_gen_server
 	-behaviour(gen_server).
 
 	%% API
@@ -120,8 +89,6 @@ snippet gen_server
 	-export([init/1, handle_call/3, handle_cast/2, handle_info/2,
 	         terminate/2, code_change/3]).
 
-	-define(SERVER, ?MODULE).
-
 	-record(state, {}).
 
 	%%%===================================================================
@@ -129,7 +96,7 @@ snippet gen_server
 	%%%===================================================================
 
 	start_link() ->
-	    gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
+	    gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
 
 	%%%===================================================================
 	%%% gen_server callbacks
@@ -155,11 +122,11 @@ snippet gen_server
 	    {ok, State}.
 
 	%%%===================================================================
-	%%% Internal functions
+	%%% private parts
 	%%%===================================================================
 
 snippet module_doc
-      %%%-------------------------------------------------------------------",
+      %%%-------------------------------------------------------------------
       %%% @author bnjm
       %%% @copyright (C) $CURRENT_YEAR, leftshift.one software gmbh
       %%% @doc
@@ -172,24 +139,23 @@ snippet module_doc
       -author("bnjm").
 
 snippet module_supervisor
-     -behaviour(supervisor).
+	-behaviour(supervisor).
       
-     -export([start_link/0, init/1]).
+	-export([start_link/0, init/1]).
 
-     start_link() ->
+	start_link() ->
       	supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
-     init([]) ->
-      AChild = #{
-		  id => 'AName',
-		  start => {'AModule', start_link, []},
-      	  restart => permanent,
-		  shutdown => 2000,
-		  type => worker,
-		  modules => ['AModule']},
-      
-	{ok, {#{strategy => one_for_one,
-    	intensity => 5,
-    	period => 30},
-    	[AChild]}
-    }.
+	init([]) ->
+		AChild = #{
+			id => 'AName',
+			start => {'AModule', start_link, []},
+			restart => permanent,
+			shutdown => 2000,
+			type => worker,
+			modules => ['AModule']},
+	     {ok, {#{
+			strategy => one_for_one,
+			intensity => 5,
+			period => 30},
+			[AChild]}}.
