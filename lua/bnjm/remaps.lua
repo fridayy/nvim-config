@@ -29,4 +29,6 @@ vim.keymap.set("i", "<C-j>", "<Down>")
 vim.keymap.set("i", "<C-k>", "<Up>")
 vim.keymap.set("i", "<C-l>", "<Right>")
 
-vim.keymap.set("i", "<C-p>", function() print("hello") end)
+-- move lines up or down using alt + k / alt + j
+vim.keymap.set("n", "<A-j>", ":m+1<CR>==")
+vim.keymap.set("n", "<A-k>", ":m-2<CR>==")
