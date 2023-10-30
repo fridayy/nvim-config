@@ -1,6 +1,6 @@
 -- contains all plugins
 return {
-    { "nvim-telescope/telescope.nvim",    tag = "0.1.1",         dependencies = { "nvim-lua/plenary.nvim" } },
+    { "nvim-telescope/telescope.nvim",    dependencies = { "nvim-lua/plenary.nvim" } },
     { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
     { "williamboman/mason.nvim",          build = ":MasonUpdate" },
     { "williamboman/mason-lspconfig.nvim" },
