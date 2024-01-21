@@ -16,7 +16,8 @@ vim.keymap.set("n", "<leader>ldD", builtin.diagnostics, { desc = "Diagnostics"})
 vim.keymap.set("n", "<leader>ldt", builtin.lsp_type_definitions, { desc = "Find type definitions"})
 vim.keymap.set("n", "<leader>lrr", builtin.lsp_references, { desc = "Find references"})
 vim.keymap.set("n", "<leader>lri", builtin.lsp_incoming_calls, { desc = "Find incoming calls"})
-vim.keymap.set("n", "<leader>lro", builtin.lsp_outgoing_calls, { desc = "Find incoming calls"})
+vim.keymap.set("n", "<leader>lro", builtin.lsp_outgoing_calls, { desc = "Find outgoing calls"})
+
 
 -- git stuff
 vim.keymap.set("n", "<leader>gb", function() builtin.git_branches(themes.get_dropdown()) end, { desc = "Git branches"})
