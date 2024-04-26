@@ -1,6 +1,6 @@
 -- keybinding remaps
 --local builtin = require("telescope.builtin")
-
+vim.o.termguicolor = true
 vim.g.mapleader = " "
 vim.keymap.set("i", "jk", "<ESC>")
 

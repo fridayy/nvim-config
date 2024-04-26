@@ -30,6 +30,7 @@ return {
     { "nvim-lua/plenary.nvim" },
     { "ThePrimeagen/harpoon" },
     { "nvim-lua/lsp-status.nvim" },
+    { "nvim-neotest/nvim-nio" },
     { "L3MON4D3/LuaSnip",                 version = "1.*",       build = "make install_jsregexp" },
     {
         "folke/which-key.nvim",
