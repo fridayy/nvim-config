@@ -60,6 +60,11 @@ snippet doc
 	%% @doc
 	%% @end
 	%% -----------------------------------------------------------------------------
+
+snippet doc_27
+	-doc"
+
+	".
 # OTP application
 snippet module_application
 	-behaviour(application).
@@ -137,6 +142,16 @@ snippet module_doc
       -module($TM_FILENAME_BASE).
       
       -author("bnjm").
+
+snippet module_doc_27
+	-module($TM_FILENAME_BASE).
+	-moduledoc"
+	@author bnjm
+	@copyright (C) $CURRENT_YEAR, leftshift.one software gmbh
+	Created : $CURRENT_DATE. $CURRENT_MONTH_NAME_SHORT $CURRENT_YEAR
+	".
+      
+	-author("bnjm").
 
 snippet module_supervisor
 	-behaviour(supervisor).

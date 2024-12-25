@@ -22,6 +22,8 @@ local lsp_attach = function(client, bufnr)
     vim.keymap.set("n", "<C-p>", function () vim.lsp.buf.signature_help() end, keymap_opts(bufnr, "Signature help"))
     -- goto impl
     vim.keymap.set("n", "<leader>ldi", function () vim.lsp.buf.implementation() end, keymap_opts(bufnr, "Goto implementation"))
+    -- goto interface definition
+    vim.keymap.set("n", "<leader>ldo", function() vim.lsp.buf.definition() end, keymap_opts(bufnr, "Goto interface definition"))
 end
 
 local lspconfig = require('lspconfig')
