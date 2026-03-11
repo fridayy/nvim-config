@@ -25,7 +25,7 @@ return {
     { "lewis6991/gitsigns.nvim" },
     { "catppuccin/nvim",                    name = "catppuccin" },
     { "phaazon/hop.nvim" },
-    { "ggandor/leap.nvim" },
+    { url = "https://codeberg.org/andyg/leap.nvim" },
     { "nvim-lua/plenary.nvim" },
     { "ThePrimeagen/harpoon" },
     { "nvim-lua/lsp-status.nvim" },
