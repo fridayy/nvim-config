@@ -31,3 +31,18 @@ vim.keymap.set("i", "<C-l>", "<Right>")
 -- move lines up or down using alt + k / alt + j
 vim.keymap.set("n", "<A-j>", ":m+1<CR>==")
 vim.keymap.set("n", "<A-k>", ":m-2<CR>==")
+
+-- terminal mode remaps
+-- Map <Esc> to exit terminal mode
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], {noremap = true})
+
+-- Easier window navigation from terminal
+vim.keymap.set('t', '<C-h>', [[<C-\><C-n><C-W>h]], {noremap = true})
+vim.keymap.set('t', '<C-j>', [[<C-\><C-n><C-W>j]], {noremap = true})
+vim.keymap.set('t', '<C-k>', [[<C-\><C-n><C-W>k]], {noremap = true})
+vim.keymap.set('t', '<C-l>', [[<C-\><C-n><C-W>l]], {noremap = true})
+
+-- Terminal in horizontal split
+vim.keymap.set('n', '<leader>ts', ':split | terminal<CR>', { desc = 'Terminal in horizontal split' })
+-- Terminal in vertical split
+vim.keymap.set('n', '<leader>tv', ':vsplit | terminal<CR>', { desc = 'Terminal in vertical split' })

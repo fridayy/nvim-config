@@ -10,7 +10,6 @@ require('mason-lspconfig').setup({
     }
 })
 
-local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lsp_attach = function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
     vim.keymap.set("n", "<leader>lf", function() vim.lsp.buf.format() end, keymap_opts(bufnr, "Format"))

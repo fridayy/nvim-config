@@ -48,5 +48,9 @@ require('rose-pine').setup({
 	}
 })
 
+require('ayu').setup({
+    mirage = true
+})
+
 -- Set colorscheme after options
-vim.cmd.colorscheme "rose-pine-dawn"
+vim.cmd.colorscheme "ayu-mirage"
