@@ -7,7 +7,8 @@ require('mason').setup({
 require('mason-lspconfig').setup({
     ensure_installed = {
         -- Replace these with whatever servers you want to install
-    }
+    },
+    automatic_enable = true
 })
 
 -- local lsp_attach = function(client, bufnr)

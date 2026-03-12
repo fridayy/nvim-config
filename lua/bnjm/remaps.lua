@@ -46,3 +46,16 @@ vim.keymap.set('t', '<C-l>', [[<C-\><C-n><C-W>l]], {noremap = true})
 vim.keymap.set('n', '<leader>ts', ':split | terminal<CR>', { desc = 'Terminal in horizontal split' })
 -- Terminal in vertical split
 vim.keymap.set('n', '<leader>tv', ':vsplit | terminal<CR>', { desc = 'Terminal in vertical split' })
+
+-- lsp
+vim.keymap.set("n", "<leader>lf", function() vim.lsp.buf.format() end)
+vim.keymap.set("n", "<leader>lR", function() vim.lsp.buf.rename() end)
+vim.keymap.set("n", "<leader>lh", function() vim.lsp.buf.hover() end)
+vim.keymap.set("n", "<leader>la", function() vim.lsp.buf.code_action() end)
+-- -- idea like signature help
+vim.keymap.set("i", "<C-p>", function () vim.lsp.buf.signature_help() end)
+vim.keymap.set("n", "<C-p>", function () vim.lsp.buf.signature_help() end)
+-- -- goto impl
+vim.keymap.set("n", "<leader>ldi", function () vim.lsp.buf.implementation() end)
+-- -- goto interface definition
+vim.keymap.set("n", "<leader>ldo", function() vim.lsp.buf.definition() end)
